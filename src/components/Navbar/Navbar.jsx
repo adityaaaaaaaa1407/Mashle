@@ -1,6 +1,11 @@
 import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
+import { Link } from "react-router-dom";
+import LoginPage from "./../../auth/forms/LoginPage";
+import { CgProfile } from "react-icons/cg";
+import Button from "../Shared/Button";
+
 const DropdownLinks = [
   {
     id: 1,
@@ -106,7 +111,7 @@ const Navbar = () => {
           {/* Navbar Right Section */}
           <div className="flex justify-between items-center gap-4">
             {/* Search Bar Section */}
-            <div className=" relative group hidden sm:block ">
+            <div className=" relative group hidden md:block ">
               <input type="text" placeholder="Search" className="search-bar" />
               <IoMdSearch
                 className="text-xl 
@@ -128,6 +133,11 @@ const Navbar = () => {
 
             <div>
               <DarkMode />
+            </div>
+
+            {/* login icon */}
+            <div className="">
+              <CgProfile className="text-gray-600 dark:text-gray-400 flex justify-center items-center relative text-2xl cursor-pointer" />
             </div>
           </div>
         </div>
