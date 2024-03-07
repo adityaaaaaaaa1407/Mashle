@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import image1 from "../../assets/website/earbuds-removebg-preview.png";
+import profile from "../../assets/website/image-removebg-preview.png";
 
 const About = () => {
   return (
@@ -11,26 +13,31 @@ const About = () => {
       >
         About Us
       </motion.h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 ">
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="prose max-w-2xl"
+          className="prose max-w-2xl sm:text-xl text-md"
         >
           {/* About Us Description */}
           <p>
-            Welcome to MASHLE! We are a passionate team dedicated
-            to providing high-quality electronics products such as earphones , smart watches, and speakers to you sell at competitive prices.
-            Our mission is to give everyone the best possible shopping experience.
+            Welcome to MASHLE! We are a passionate team dedicated to providing
+            high-quality electronics products such as earphones , smart watches,
+            and speakers to you sell at competitive prices. Our mission is to
+            give everyone the best possible shopping experience.
           </p>
+          <br />
           <p>
-            We believe in the power of trust and values, e.g., excellent customer
-            service, sustainable practices, innovation. We are committed to
-            offering a positive shopping experience for all our customers.
+            We believe in the power of trust and values, e.g., excellent
+            customer service, sustainable practices, innovation. We are
+            committed to offering a positive shopping experience for all our
+            customers.
           </p>
           {/* Optional: Add a call to action button */}
-          {/* <a href="#" className="btn btn-primary mt-4">Learn More</a> */}
+          <a href="#" className="btn btn-primary mt-4">
+            Learn More
+          </a>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
@@ -40,9 +47,9 @@ const About = () => {
         >
           {/* About Us Image */}
           <img
-            src="/images/about-us.jpg"
+            src={image1}
             alt="About Us"
-            className="rounded-lg shadow-md"
+            className="rounded-3xl shadow-lg w-full h-auto border border-none object-cover bg-zinc-400 "
           />
         </motion.div>
       </div>
@@ -51,22 +58,25 @@ const About = () => {
         {/* Loop through team member data (replace with your data) */}
         {[
           {
-            name: "John Doe",
+            name: "Aditya Sagavekar",
             title: "CEO",
-            image: "/images/team-member-1.jpg",
+            image: profile,
           },
           {
-            name: "Jane Smith",
+            name: "Rohit Vishwakarma",
             title: "Marketing Manager",
-            image: "/images/team-member-2.jpg",
+            image: profile,
           },
           {
-            name: "Mike Lee",
+            name: "Bharat Gupta",
             title: "Head of Product",
-            image: "/images/team-member-3.jpg",
+            image: profile,
           },
         ].map((member) => (
-          <div key={member.name} className="flex flex-col items-center">
+          <div
+            key={member.name}
+            className="flex flex-col items-center rounded-2xl w-full h-auto border-none object-cover bg-zinc-300 dark:bg-slate-700"
+          >
             <motion.img
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -75,8 +85,10 @@ const About = () => {
               alt={member.name}
               className="w-32 h-32 rounded-full mx-auto mb-2"
             />
-            <p className="text-lg font-semibold">{member.name}</p>
-            <p className="text-gray-600">{member.title}</p>
+            <p className="text-lg font-semibold text-black dark:text-white">
+              {member.name}
+            </p>
+            <p className=" text-black dark:text-white mb-5">{member.title}</p>
           </div>
         ))}
       </div>

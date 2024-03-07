@@ -4,25 +4,24 @@ import DarkMode from "./DarkMode";
 import { Link, NavLink } from "react-router-dom";
 import LoginPage from "./../../auth/forms/LoginPage";
 import { CgProfile } from "react-icons/cg";
-import Button from "../Shared/ButtonDemo";
 
-const DropdownLinks = [
-  {
-    id: 1,
-    name: "Trending Products",
-    link: "/TrendingProducts",
-  },
-  {
-    id: 2,
-    name: "Best Selling",
-    link: "/BestSelling",
-  },
-  {
-    id: 3,
-    name: "Top Rated",
-    link: "/TopRated",
-  },
-];
+// const DropdownLinks = [
+//   {
+//     id: 1,
+//     name: "Trending Products",
+//     link: "/TrendingProducts",
+//   },
+//   {
+//     id: 2,
+//     name: "Best Selling",
+//     link: "/BestSelling",
+//   },
+//   {
+//     id: 3,
+//     name: "Top Rated",
+//     link: "/TopRated",
+//   },
+// ];
 const MenuLinks = [
   {
     id: 1,
@@ -76,8 +75,8 @@ const Navbar = () => {
                 ))}
 
                 {/* Drop down  menu for mobile devices*/}
-                <li className="relative cursor-pointer group">
-                  <NavLink
+                {/* <li className="relative cursor-pointer group"> */}
+                {/* <NavLink
                     href="#"
                     className="flex items-center gap-[2px] font-semibold text-gray-500 
                     hover:text-black
@@ -87,9 +86,9 @@ const Navbar = () => {
                     <span>
                       <FaCaretDown className="group:hover:rotate-100 duration-300" />
                     </span>
-                  </NavLink>
-                  {/* Dropdown Links */}
-                  <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white ">
+                  </NavLink> */}
+                {/* Dropdown Links */}
+                {/* <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white ">
                     <ul className="space-y-2">
                       {DropdownLinks.map((data, index) => (
                         <li key={index}>
@@ -103,8 +102,8 @@ const Navbar = () => {
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </li>
+                  </div> */}
+                {/* </li> */}
               </ul>
             </div>
           </div>

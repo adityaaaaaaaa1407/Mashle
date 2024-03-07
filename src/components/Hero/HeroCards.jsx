@@ -8,7 +8,7 @@ const HeroCards = () => {
       {heroCards.map((card) => (
         <div key={card.id}>
           <Link to="/products">
-            <img id={card.id} src={card.src} />
+            <img id={card.id} src={card.src} className="p-2 rounded-3xl " />
           </Link>
         </div>
       ))}

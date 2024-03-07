@@ -12,20 +12,20 @@ import Footer from "./components/Footer/Footer"; // Import your footer component
 const App = () => {
   return (
     <Router>
-      <div className="container mx-auto px-4 py-8 bg-white dark:bg-gray-900 dark:text-white">
+      <div className="container mx-auto width: 100% bg-white dark:bg-gray-900 dark:text-white">
         {/* Navigation bar (replace with your component or styles) */}
 
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/products" element={<Products />} />
           <Route path="/blogs" element={<Blogs />} />
           {/* Add routes for other pages if needed */}
         </Routes>
       </div>
-      <Footer /> {/* Display footer on all pages */}
+      <Footer className="" /> {/* Display footer on all pages */}
     </Router>
   );
 };
