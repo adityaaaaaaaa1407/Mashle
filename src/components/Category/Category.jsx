@@ -1,7 +1,7 @@
 import Image1 from "../../assets/category/earphone.png";
 import Image3 from "../../assets/all_images/speaker2.webp";
 import Image2 from "../../assets/all_images/watch_1.webp";
-import Button from "./../Shared/Button";
+import Button from "../Shared/ButtonDemo";
 
 const Category = () => {
   return (
