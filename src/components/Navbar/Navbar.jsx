@@ -2,7 +2,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
 import DarkMode from "./DarkMode";
 import { Link, NavLink } from "react-router-dom";
-import LoginPage from "./../../auth/forms/LoginPage";
+
 import { CgProfile } from "react-icons/cg";
 
 // const DropdownLinks = [
@@ -44,7 +44,6 @@ const MenuLinks = [
     link: "/Blogs",
   },
 ];
-
 const Navbar = () => {
   return (
     <div className="bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
@@ -135,9 +134,11 @@ const Navbar = () => {
             </div>
 
             {/* login icon */}
-            <div className="">
-              <CgProfile className="text-gray-600 dark:text-gray-400 flex justify-center items-center relative text-2xl cursor-pointer" />
-            </div>
+            <button>
+              <Link to="/login">
+                <CgProfile className="text-gray-600 dark:text-gray-400 flex justify-center items-center relative text-2xl cursor-pointer" />
+              </Link>
+            </button>
           </div>
         </div>
       </div>

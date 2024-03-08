@@ -1,11 +1,7 @@
 import React from "react";
 
 const RootLayout = () => {
-  return (
-    <div>
-      <h1></h1>
-    </div>
-  )
+  return <div>RootLayout</div>;
 };
 
 export default RootLayout;

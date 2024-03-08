@@ -9,7 +9,7 @@ const Footer = () => {
     {
       icon: (
         <i className="fab fa-instagram">
-          <FaGithub />
+          <FaInstagram />
         </i>
       ),
       link: "https://www.instagram.com/_aditya__1421/",
@@ -25,7 +25,7 @@ const Footer = () => {
     {
       icon: (
         <i className="fab fa-github">
-          <FaInstagram />
+          <FaGithub />
         </i>
       ),
       link: "https://github.com/adityaaaaaaaa1407",
@@ -88,12 +88,12 @@ const Footer = () => {
                 key={socialLink.link}
                 className="inline-block sm:text-3xl text-xl mx-2"
               >
-                <a
-                  href={socialLink.link}
+                <Link
+                  to={socialLink.link}
                   className=" text-black dark:text-white hover:text-blue-500 dark:hover:text-blue-500"
                 >
                   {socialLink.icon}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
