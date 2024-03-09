@@ -1,14 +1,9 @@
 import { account, appwriteConfig, databases } from "./config";
 import { ID, Query } from "appwrite";
 
-export async function createUserAccount(users) {
+export async function createUserAccount({ email, password, name }) {
   try {
-    const newAccount = await account.create(
-      ID.unique(),
-      users.email,
-      users.password,
-      users.name
-    );
+    const newAccount = await account.create(ID.unique(), email, password, name);
 
     if (!newAccount) throw Error;
 
@@ -40,39 +35,38 @@ export async function saveUserToDB(users) {
   }
 }
 
-export async function signInAccount(users) {
-    try {
-      const session = await account.createEmailSession(users.email, users.password);
-      return session;
-    } catch (error) {
-      return null;
-    }
+export async function signInAccount({ email, password }) {
+  try {
+    const session = await account.createEmailSession(email, password);
+    return session;
+  } catch (error) {
+    return null;
   }
+}
 
+export async function getCurrentUser() {
+  try {
+    const currentAccount = await account.get();
+    if (!currentAccount) throw Error;
 
-  export async function getCurrentUser() {
-    try {
-      const currentAccount = await account.get();
-      if (!currentAccount) throw Error;
-  
-      const currentUser = await databases.listDocuments(
-        appwriteConfig.databaseId,
-        appwriteConfig.usersCollectionId,
-        [Query.equal("userId", currentAccount.$id)]
-      );
-  
-      if (!currentUser) throw Error;
-      return currentUser.documents[0];
-    } catch (error) {
-      console.log(error);
-    }
+    const currentUser = await databases.listDocuments(
+      appwriteConfig.databaseId,
+      appwriteConfig.usersCollectionId,
+      [Query.equal("userId", currentAccount.$id)]
+    );
+
+    if (!currentUser) throw Error;
+    return currentUser.documents[0];
+  } catch (error) {
+    console.log(error);
   }
-  
-  export async function signOutAccount() {
-    try {
-      const session = await account.deleteSession("current");
-      return session;
-    } catch (error) {
-      return null;
-    }
+}
+
+export async function signOutAccount() {
+  try {
+    const session = await account.deleteSession("current");
+    return session;
+  } catch (error) {
+    return null;
   }
+}

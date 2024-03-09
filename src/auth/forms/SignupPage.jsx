@@ -26,9 +26,7 @@ const SignupPage = () => {
       <div className="w-full max-w-md p-8">
         <h1 className="text-3xl font-bold mb-6">Sign Up</h1>
         {isSuccess ? (
-          <p className="success-message text-green-500 font-medium mb-6">
-            Registration successful!
-          </p>
+          <p>You have successfully signed up.</p>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="name" className="block mb-2 text-sm font-medium">
@@ -37,6 +35,7 @@ const SignupPage = () => {
             <input
               type="text"
               id="name"
+              placeholder="Enter your name"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-xl w-full sm:text-sm px-3 py-2 border border-gray-300 dark:text-black"
               {...register("name", { required: "Please enter your name" })}
             />
@@ -55,6 +54,7 @@ const SignupPage = () => {
             <input
               type="email"
               id="email"
+              placeholder="Enter your email address"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-xl w-full sm:text-sm px-3 py-2 border border-gray-300 dark:text-black"
               {...register("email", {
                 required: "Please enter your email",
@@ -79,6 +79,7 @@ const SignupPage = () => {
             <input
               type="password"
               id="password"
+              placeholder="Enter your password"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-xl w-full sm:text-sm px-3 py-2 border border-gray-300 dark:text-black"
               {...register("password", {
                 required: "Please enter a password",

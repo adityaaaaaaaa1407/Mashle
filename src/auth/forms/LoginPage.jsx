@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { motion } from "framer-motion"; // Optional for subtle animations (install `framer-motion`)
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const LoginPage = () => {
   const {
@@ -27,9 +27,7 @@ const LoginPage = () => {
       <div className="w-full max-w-md p-8 ">
         <h1 className="text-3xl font-bold mb-6">Login</h1>
         {isSuccess ? (
-          <p className="success-message text-green-500 font-medium mb-6">
-            login Successful
-          </p>
+          <p>You have successfully logged in.</p>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)}>
             <label
@@ -41,6 +39,7 @@ const LoginPage = () => {
             <input
               type="email"
               id="email"
+              placeholder="Enter your email"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-xl w-full sm:text-sm px-3 py-2 border border-gray-300 dark:text-black"
               {...register("email", {
                 required: "Please enter your email",
@@ -65,6 +64,7 @@ const LoginPage = () => {
             <input
               type="password"
               id="password"
+              placeholder="Enter your password"
               className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 w-full sm:text-sm px-3 py-2 border border-gray-300 dark:text-black rounded-xl"
               {...register("password", {
                 required: "Please enter a password",
