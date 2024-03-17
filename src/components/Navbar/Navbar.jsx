@@ -1,148 +1,145 @@
-import { IoMdSearch } from "react-icons/io";
-import { FaCaretDown, FaCartShopping } from "react-icons/fa6";
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
+import { CgProfile, CgSearch, CgShoppingCart } from "react-icons/cg";
+import { AiOutlineHeart } from "react-icons/ai";
+
 import DarkMode from "./DarkMode";
-import { Link, NavLink } from "react-router-dom";
 
-import { CgProfile } from "react-icons/cg";
-
-// const DropdownLinks = [
-//   {
-//     id: 1,
-//     name: "Trending Products",
-//     link: "/TrendingProducts",
-//   },
-//   {
-//     id: 2,
-//     name: "Best Selling",
-//     link: "/BestSelling",
-//   },
-//   {
-//     id: 3,
-//     name: "Top Rated",
-//     link: "/TopRated",
-//   },
-// ];
-const MenuLinks = [
-  {
-    id: 1,
-    name: "Home",
-    link: "/#",
-  },
-  {
-    id: 2,
-    name: "Products",
-    link: "/Products",
-  },
-  {
-    id: 3,
-    name: "About",
-    link: "/About",
-  },
-  {
-    id: 4,
-    name: "Blogs",
-    link: "/Blogs",
-  },
-];
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false); // State to track navbar menu visibility
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
   return (
-    <div className="bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
-      <div className="py-4">
-        <div className="container flex justify-between items-center">
-          {/* Logo and Links Section */}
-          <div className="flex  items-center gap-4">
-            <NavLink
-              to="/"
-              className="text-primary font-semibold tracking-widest text-2xl uppercase sm:text-3xl"
-            >
-              Mashle
-            </NavLink>
-            {/* Menu Items */}
-            <div className="hidden lg:block">
-              <ul className="flex items-center gap-4 ">
-                {MenuLinks.map((data, index) => (
-                  <li key={index}>
-                    <NavLink
-                      to={data.link}
-                      className="inline-block px-4 font-semibold  text-gray-500  hover:text-black
-                    dark:hover:text-white
-                    duration-200"
-                    >
-                      {data.name}
-                    </NavLink>
-                  </li>
-                ))}
+    <>
+      <nav className="bg-gray-500 fixed top-0 left-0 w-full z-50 ">
+        <div className="container mx-auto px-4 py-2  flex justify-between items-center">
+          {/* Logo (optional) */}
+          <Link to="/" className=" text-xl font-bold">
+            MASHLE
+          </Link>
 
-                {/* Drop down  menu for mobile devices*/}
-                {/* <li className="relative cursor-pointer group"> */}
-                {/* <NavLink
-                    href="#"
-                    className="flex items-center gap-[2px] font-semibold text-gray-500 
-                    hover:text-black
-                    dark:hover:text-white py-2"
-                  >
-                    Quick Links
-                    <span>
-                      <FaCaretDown className="group:hover:rotate-100 duration-300" />
-                    </span>
-                  </NavLink> */}
-                {/* Dropdown Links */}
-                {/* <div className="absolute z-[9999] hidden group-hover:block w-[200px] rounded-md bg-white shadow-md dark:bg-gray-900 p-2 dark:text-white ">
-                    <ul className="space-y-2">
-                      {DropdownLinks.map((data, index) => (
-                        <li key={index}>
-                          <NavLink
-                            className="text-gray-500 hover:text-black 
-                           dark:hover:text-white duration-200 inline-block w-full p-2 hover:bg-primary/20 rounded-md font-semibold"
-                            href={data.link}
-                          >
-                            {data.name}
-                          </NavLink>
-                        </li>
-                      ))}
-                    </ul>
-                  </div> */}
-                {/* </li> */}
-              </ul>
-            </div>
-          </div>
-          {/* Navbar Right Section */}
-          <div className="flex justify-between items-center gap-4">
-            {/* Search Bar Section */}
-            <div className=" relative group hidden md:block ">
-              <input type="text" placeholder="Search" className="search-bar" />
-              <IoMdSearch
-                className="text-xl 
-              group-hover:text-primary text-gray-600 dark:text-gray-400   duration-200 
-              absolute top-1/2  -translate-y-1/2 right-3"
-              />
-            </div>
-
-            {/* Order-button section */}
-
-            <button className="relative p-3">
-              <FaCartShopping className="text-xl text-gray-600 dark:text-gray-400" />
-              <div className=" bg-red-500  w-4 h-4  text-white rounded-full absolute  top-0 right-0 flex items-center justify-center text-xs">
-                4
-              </div>
-            </button>
-
-            {/* dark mode Section */}
-
-            <div>
-              <DarkMode />
-            </div>
-
-            {/* login icon */}
-            <button>
-              <Link to="/login">
-                <CgProfile className="text-gray-600 dark:text-white flex justify-center items-center relative text-2xl cursor-pointer" />
+          {/* Navigation links (desktop) */}
+          <ul className="hidden md:flex space-x-8 ">
+            <li>
+              <Link
+                to="/"
+                className="hover:text-orange-700 hover:underline font-bold"
+              >
+                Home
               </Link>
-            </button>
+            </li>
+
+            <li>
+              <Link
+                to="/products"
+                className="hover:text-orange-700 hover:underline font-bold"
+              >
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className="hover:text-orange-700 hover:underline font-bold"
+              >
+                about
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/blogs"
+                className="hover:text-orange-700 hover:underline font-bold"
+              >
+                Blogs
+              </Link>
+            </li>
+
+            {/* Add more links as needed */}
+          </ul>
+          <div className=" flex justify-end space-x-4 text-2xl">
+            <CgSearch className=" cursor-pointer hover:text-orange-700" />
+
+            <AiOutlineHeart className=" cursor-pointer hover:text-orange-700" />
+
+            <span className="cart-icon ">
+              <CgShoppingCart className="cursor-pointer hover:text-orange-700" />
+            </span>
+            <span className="hidden md:block">
+              <DarkMode />
+            </span>
+            <Link to="/login">
+              <CgProfile className=" hover:text-orange-700 hidden md:block justify-center items-center relative text-2xl cursor-pointer" />
+            </Link>
           </div>
+
+          {/* Hamburger menu (mobile) */}
+          <button onClick={toggleMenu} className="md:hidden focus:outline-none">
+            <svg
+              className="h-6 w-6 text-white"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              {isOpen ? (
+                <path
+                  d="M6 18L18 6M6 6l12 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              ) : (
+                <>
+                  <path
+                    d="M4 6h16M4 12h16M4 18h16"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </>
+              )}
+            </svg>
+          </button>
         </div>
-      </div>
-    </div>
+
+        {/* Mobile navigation menu (toggles on click) */}
+        {isOpen && (
+          <ul className="md:hidden bg-gray-800 text-white absolute top-full left-0 w-full py-4">
+            <li className="px-4 py-2 hover:bg-gray-700">
+              <Link to="/signin">
+                {" "}
+                <CgProfile className="text-white dark:text-gray-400 flex justify-center items-center relative text-2xl cursor-pointer mb-2" />
+                Go to login
+              </Link>
+              <hr className="mt-2" />
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-700">
+              <Link to="/">Home</Link>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-700">
+              <Link to="/products">product</Link>
+            </li>
+
+            <li className="px-4 py-2 hover:bg-gray-700">
+              <Link to="/about">About</Link>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-700">
+              <Link to="/blogs">Blogs</Link>
+            </li>
+            <li className="px-4 py-2 hover:bg-gray-700 flex  gap-4">
+              choose a Theme
+              <DarkMode />
+            </li>
+
+            {/* Add more links as needed */}
+          </ul>
+        )}
+      </nav>
+    </>
   );
 };
 

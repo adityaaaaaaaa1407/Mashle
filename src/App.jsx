@@ -24,6 +24,7 @@ const App = () => {
         {/* Navigation bar (replace with your component or styles) */}
 
         <Navbar />
+        <hr className="mb-20" />
 
         <Routes>
           {/* public routes here */}

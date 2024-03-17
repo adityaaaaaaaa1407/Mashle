@@ -8,12 +8,9 @@ import HeroCards from "@/components/Hero/HeroCards";
 
 const Home = () => {
   return (
-    <div className="home-page min-h-screen">
+    <div className="home-page min-h-screen ">
       {/* slider Section */}
       <section id="imageSlider">
-
-
-        
         <ImageSlider />
       </section>
 
