@@ -7,7 +7,7 @@ const Products = () => {
       <h1 className="text-3xl font-bold mb-6">Products</h1>
 
       <div> </div>
-      <div className="grid grid-cols-2 md:grid-cols-5 gap-8 relative">
+      <div className="grid  md:grid-cols-5 grid-cols-2 sm:gap-8 gap-4 relative">
         {products.map((product) => (
           <div
             key={product.id}
@@ -29,12 +29,14 @@ const Products = () => {
                 </h3>
               </div>
 
-              <h3 className="text-lg font-bold mb-1">{product.productTitle}</h3>
+              <h3 className="sm:text-lg text-sm font-bold mb-1">
+                {product.productTitle}
+              </h3>
               <div className="flex flex-row gap-2  relative">
-                <p className=" text-blue-500 font-bold">
+                <p className="sm:text-lg text-sm text-blue-500 font-bold">
                   Rs.{product.productPrice}
                 </p>
-                <p className="text-gray-500 font-bold text-sm line-through mt-0.5">
+                <p className="text-gray-500 font-bold sm:text-lg text-sm line-through mt-0.5">
                   Rs.{product.productOgPrice}
                 </p>
               </div>
@@ -47,7 +49,7 @@ const Products = () => {
 
             <button
               type="submit"
-              className="relative inline-block items-center px-5 py-2 bg-blue-700 hover:bg-black text-white font-normal rounded-xl focus:outline-none text-sm   focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-3 mb-3 ml-2"
+              className="relative inline-block items-center sm:px-5 px-2 sm:py-2 py-1 bg-blue-700 hover:bg-black text-white font-normal rounded-xl focus:outline-none text-sm   focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mt-3 mb-3 ml-2"
             >
               ADD TO CART
             </button>
