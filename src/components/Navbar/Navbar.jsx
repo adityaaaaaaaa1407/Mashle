@@ -110,7 +110,7 @@ const Navbar = () => {
         {isOpen && (
           <ul className="md:hidden bg-gray-800 text-white absolute top-full left-0 w-full py-4">
             <li className="px-4 py-2 hover:bg-gray-700">
-              <Link to="/signin">
+              <Link to="/login">
                 {" "}
                 <CgProfile className="text-white dark:text-gray-400 flex justify-center items-center relative text-2xl cursor-pointer mb-2" />
                 Go to login
