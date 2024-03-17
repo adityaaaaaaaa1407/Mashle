@@ -67,7 +67,7 @@ const Navbar = () => {
             <span className="cart-icon ">
               <CgShoppingCart className="cursor-pointer hover:text-orange-700" />
             </span>
-            <span className="hidden md:block">
+            <span className="">
               <DarkMode />
             </span>
             <Link to="/login">
@@ -129,10 +129,6 @@ const Navbar = () => {
             </li>
             <li className="px-4 py-2 hover:bg-gray-700">
               <Link to="/blogs">Blogs</Link>
-            </li>
-            <li className="px-4 py-2 hover:bg-gray-700 flex  gap-4">
-              choose a Theme
-              <DarkMode />
             </li>
 
             {/* Add more links as needed */}
