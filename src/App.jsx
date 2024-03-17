@@ -14,6 +14,8 @@ import SignupPage from "./auth/forms/SignupPage";
 import Wishlist from "./root/pages/Wishlist";
 
 import AuthLayout from "./auth/AuthLayout";
+import Categories from "./components/Categories/Categories";
+import SingleProduct from "./components/Product/SingleProduct";
 
 const App = () => {
   return (
@@ -28,7 +30,10 @@ const App = () => {
 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/category/:id" element={<Categories />} />
+          <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/products" element={<Products />} />
+
           <Route path="/blogs" element={<BlogPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/signup" element={<SignupPage />} />

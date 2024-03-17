@@ -71,10 +71,9 @@ const ImageSlider = () => {
       },
     ],
   };
- 
 
   return (
-    <div className="slider-container ">
+    <div className="">
       <Slider {...settings}>
         {imagesForSlider.map((image) => (
           <div key={image.id} className="slider-item">

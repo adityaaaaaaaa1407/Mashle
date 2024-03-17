@@ -105,7 +105,7 @@ const SignupPage = () => {
             <p className="mt-5">
               Already have an account?{" "}
               <Link
-                to="/login "
+                to="/signin "
                 className="hover:text-blue-400 dark:hover:text-blue-700 "
               >
                 Login

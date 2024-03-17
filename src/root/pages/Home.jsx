@@ -11,6 +11,9 @@ const Home = () => {
     <div className="home-page min-h-screen">
       {/* slider Section */}
       <section id="imageSlider">
+
+
+        
         <ImageSlider />
       </section>
 

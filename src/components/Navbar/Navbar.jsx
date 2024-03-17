@@ -136,7 +136,7 @@ const Navbar = () => {
             {/* login icon */}
             <button>
               <Link to="/login">
-                <CgProfile className="text-gray-600 dark:text-gray-400 flex justify-center items-center relative text-2xl cursor-pointer" />
+                <CgProfile className="text-gray-600 dark:text-white flex justify-center items-center relative text-2xl cursor-pointer" />
               </Link>
             </button>
           </div>
